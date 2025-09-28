@@ -1,0 +1,54 @@
+using System;
+
+// Перечислимый тип ВУЗ
+public enum University
+{
+    КГУ,
+    КАИ,
+    КХТИ
+}
+
+// Структура работник
+public struct Employee
+{
+    public string Name;     // Имя работника
+    public University University; // ВУЗ работника
+
+    // Метод для вывода информации о работнике
+    public void PrintEmployeeInfo()
+    {
+        Console.WriteLine("Информация о работнике:");
+        Console.WriteLine($"Имя: {Name}");
+        Console.WriteLine($"ВУЗ: {University}");
+        Console.WriteLine();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Создание переменных типа Employee и заполнение значениями
+
+        // Способ 1: Поэлементное заполнение
+        Employee employee1;
+        employee1.Name = "Иванов Алексей";
+        employee1.University = University.КГУ;
+
+        // Способ 2: Инициализация при создании
+        Employee employee2 = new Employee
+        {
+            Name = "Петрова Мария",
+            University = University.КАИ
+        };
+
+        // Способ 3: Еще один работник
+        Employee employee3;
+        employee3.Name = "Сидоров Дмитрий";
+        employee3.University = University.КХТИ;
+
+        // Вывод информации о работниках
+        employee1.PrintEmployeeInfo();
+        employee2.PrintEmployeeInfo();
+        employee3.PrintEmployeeInfo();
+    } }
